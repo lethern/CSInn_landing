@@ -1,0 +1,70 @@
+html {
+	background-color: rgb(114,137,218);
+}
+
+.centeredTitle{
+	font-size: 64px;
+	font-family: 'Open Sans';
+	color: transparent;
+	text-shadow: 0 0 3px rgba(255,255,255,0.45);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.centeredTitle_min{
+	font-size: 58px;
+}
+
+.specialWrapper{
+	position: absolute;
+}
+
+.specialTitlebar{
+	background-color: rgb(94, 120, 213);
+	width: 170px;
+	height: 20px;
+	animation: animExpandTitle 0.7s ease-in-out;
+}
+.specialBody{
+	background-color: rgb(90, 115, 206);
+	width: 170px;
+	height: 150px;
+	animation: animExpandBody 0.7s ease-in-out;
+	color: rgb(35, 35, 95);
+	padding: 1px;
+	box-sizing: border-box;
+}
+.animFadeInText{
+	animation: letter-animation 5s linear forwards;
+}
+
+.animFadeInText div{
+	font-size: 14px;
+	height: 14px;
+	animation: animSlideText 0.7s ease-out 1 both,
+			animOpacityText 1s linear 1 both;
+	display: block;
+}
+
+@keyframes animExpandTitle {
+	from { width: 20px;	}
+	to {	width: 170px; }
+}
+
+@keyframes animExpandBody {
+	from{ height: 0px; }
+	to {	height: 150px; }
+}
+
+@keyframes animOpacityText{
+	0%{ opacity: 0; }
+	10%{ opacity: 0; }
+	50% {opacity: 0.6; }
+	to{ opacity: 1; }
+}
+
+@keyframes animSlideText{
+	from{ transform: translate(0, -5px); }
+	to{ transform: translate(0, 0); }
+}

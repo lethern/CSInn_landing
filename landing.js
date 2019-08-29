@@ -24,25 +24,22 @@ function drawBackgroundSpecial(){
 	}
 	
 	
-	let titlebar = createDiv( wrapper, ['animExpandRect', 'specialTitlebar'] );
+	let titlebar = createDiv( wrapper, ['specialTitlebar'] );
 	
 	setTimeout( drawBackgroundSpecial_body, 650, {wrapper, titlebar} );
 };
 
 function drawBackgroundSpecial_body(divs){
-	divs.body = createDiv( divs.wrapper, ['animExpandRect', 'specialBody'] );
+	divs.body = createDiv( divs.wrapper, ['specialBody'] );
 	
 	setTimeout(drawBackgroundSpecial_action, 700, divs);
 };
 
 function drawBackgroundSpecial_action(divs){
-	//divs.body.textContent = 'hi\nhi';
-	
-	//var text = document.getElementById('text');
-	//var newDom = '';
 	const animationDelay = 350;
+	
 	let text = getRandomText();
-	text = '<span>' + text.split('\n').join('</span><span>') + '</span>';
+	text = '<div>' + text.split('\n').join('</div><div>') + '</div>';
 	text = text.split(' ').join('&nbsp;');
 	
 	let fragment = document.createElement('div');
@@ -67,9 +64,13 @@ function drawBackgroundSpecial_hide(divs){
 	setupBackgroundSpecial();
 };
 
+var text_index = 0;
 function getRandomText(){
-	let arr= ['.specialTitlebar{\n   background-color:\n      rgb(94, 120, 213);\n   width: 150px;\n   height: 20px;\n   animation:\n      animExpandTitle 0.7s\n      ease-in-out;\n}'];
-	return arr[0];
+	let arr= ['.specialTitlebar{\n   background-color:\n      rgb(94, 120, 213);\n   width: 150px;\n   height: 20px;\n   animation:\n      animExpandTitle 0.7s\n      ease-in-out;\n}',
+		'SELECT *\nFROM [jRolePerm] j\nJOIN [Permission] P \n  ON P.id=j.perm_id\nWHERE not exists(\n    SELECT * \n    FROM [jRolePerm] j2\n    WHERE j2.perm_id \n      = j1.perm_id\n      and j2.role_id > 13 )'
+	];
+	if(text_index>= arr.length) text_index= 0;
+	return arr[text_index++];
 };
 
 function randomInRange(min, max){
