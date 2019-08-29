@@ -7,7 +7,7 @@ function onload(){
 
 function setupBackgroundSpecial(){
 	console.log('setupBackgroundSpecial');
-	let delay_ms = randomInRange( 3000, 6000 );
+	let delay_ms = randomInRange( 2000, 4000 );
 	//let delay_ms = randomInRange( 1000, 2000 );
 	//let delay_ms = 1;
 	setTimeout( drawBackgroundSpecial, delay_ms );
@@ -57,7 +57,7 @@ function drawBackgroundSpecial_action(divs){
 
 	addClasses(divs.body, 'animFadeInText');
 	
-	let delay_ms = randomInRange( 3000, 6000 );
+	let delay_ms = randomInRange( 3000, 4000 );
 	delay_ms += children.length * animationDelay;
 	setTimeout(drawBackgroundSpecial_hide, delay_ms, divs);
 };
