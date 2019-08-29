@@ -22,24 +22,56 @@ html {
 .centeredTitle_min{
 	font-size: 58px;
 }
-.bckSpecial{
-	background-color: rgb(94, 120, 213);
-	width: 150px;
-	height: 20px;
-	animation: animExpandRect 0.7s ease-in-out;
+
+.specialWrapper{
 	position: absolute;
 }
 
-@keyframes animExpandRect {
-	0% {
-		width: 20px;
-		height: 20px;
-	}
-	100% {
-		width: 150px;
-		height: 20px;
-	}
+.specialTitlebar{
+	background-color: rgb(94, 120, 213);
+	width: 150px;
+	height: 20px;
+	animation: animExpandTitle 0.7s ease-in-out;
 }
+.specialBody{
+	background-color: rgb(85, 112, 202);
+	width: 150px;
+	height: 150px;
+	animation: animExpandBody 0.7s ease-in-out;
+}
+.animFadeInText{
+	animation: letter-animation 5s linear forwards;
+}
+
+.animFadeInText span{
+	font-size: 14px;
+	height: 14px;
+	animation: animSlideText 0.7s ease-out 1 both,
+			animOpacityText 1s linear 1 both;
+	display: block;
+}
+
+@keyframes animExpandTitle {
+	from { width: 20px;	}
+	to {	width: 150px; }
+}
+
+@keyframes animExpandBody {
+	from{ height: 0px; }
+	to {	height: 150px; }
+}
+
+@keyframes animOpacityText{
+	0%{ opacity: 0; }
+	10%{ opacity: 0; }
+	50% {opacity: 0.6; }
+	to{ opacity: 1; }
+}
+@keyframes animSlideText{
+	from{ transform: translate(0, -5px); }
+	to{ transform: translate(0, 0); }
+}
+
 	</style>
 </head>
 
