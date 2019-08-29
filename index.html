@@ -3,24 +3,42 @@
 <head>
 	<title></title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<script type="application/javascript" src="landing.js"></script>
 	<style>
-	
 html {
 	background-color: rgb(114,137,218);
 }
 
-.centeredBckgrdIcon{
+.centeredTitle{
 	font-size: 64px;
 	font-family: 'Open Sans';
-	/* color: white; */
 	color: transparent;
-   text-shadow: 0 0 3px rgba(255,255,255,0.45);
-	
+	text-shadow: 0 0 3px rgba(255,255,255,0.45);
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	/* opacity: 0.3; */
 	transform: translate(-50%, -50%);
+}
+.centeredTitle_min{
+	font-size: 58px;
+}
+.bckSpecial{
+	background-color: rgb(94, 120, 213);
+	width: 150px;
+	height: 20px;
+	animation: animExpandRect 0.7s ease-in-out;
+	position: absolute;
+}
+
+@keyframes animExpandRect {
+	0% {
+		width: 20px;
+		height: 20px;
+	}
+	100% {
+		width: 150px;
+		height: 20px;
+	}
 }
 	</style>
 </head>
@@ -28,7 +46,7 @@ html {
 
 <body>
 
-	<div class="centeredBckgrdIcon">C# INN
+	<div class="centeredTitle">C# <span class="centeredTitle_min">INN</span>
 	</div>
 	
 </body>
