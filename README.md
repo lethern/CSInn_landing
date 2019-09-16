@@ -10,7 +10,7 @@
 
 ### Setup
  - open `Tools -> Options` and setup checkbox for "use previews of the .NET Core SDK" as in: https://i.imgur.com/abIye9p.png
- - restart
+ - restart VS
  - in Team Explorer, switch branch to `dev` (ask us how)
  
 ### Run
